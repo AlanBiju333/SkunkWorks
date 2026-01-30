@@ -3,6 +3,7 @@ package com.skunkworks.tests;
 import com.skunkworks.base.BaseTest;
 import com.skunkworks.config.ConfigReader;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,6 +16,7 @@ public class FirstTest extends BaseTest {//since BaseTest is extended, testng wi
 
     @Test
     public void launchOrangeHRM() {
+        WebDriver driver=getDriver();
         driver.get(ConfigReader.getProperty("url"));
         System.out.println("Page Title: " + driver.getTitle());
         WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(15));
