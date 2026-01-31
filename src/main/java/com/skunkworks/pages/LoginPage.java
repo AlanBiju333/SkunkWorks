@@ -9,6 +9,7 @@ public class LoginPage extends BasePage {
     private final By passwordInput= By.xpath("//*[@name='password']");
     private final By loginButton= By.xpath("//*[@data-v-10d463b7]");
     private final By profilePic=By.xpath("//*[@data-v-bdd6d943 and @alt='profile picture']");
+    private final By invalidCredentialsMsg= By.xpath("//*[text()='Invalid credentials']");
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -22,5 +23,13 @@ public class LoginPage extends BasePage {
 
     public boolean isLoginSuccess(){
         return isDisplayed(profilePic);
+    }
+
+    public boolean isLoginFailed(){
+        return isDisplayed(invalidCredentialsMsg);
+    }
+
+    public boolean isLoginPageVisible(){
+        return isDisplayed(loginButton);
     }
 }

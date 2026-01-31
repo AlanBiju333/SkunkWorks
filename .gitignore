@@ -56,3 +56,6 @@ build/
 /drivers/
 /browserProfiles/
 /downloads/
+
+# Sensitive data
+src/main/resources/sensitive.properties
