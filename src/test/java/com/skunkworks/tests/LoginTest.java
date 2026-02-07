@@ -13,6 +13,11 @@ public class LoginTest extends BaseTest {
         String userName = SecureDataReader.getUsername();
         String passWord = SecureDataReader.getPassword();
 
+        if (userName == null || userName.isEmpty()
+                || passWord == null || passWord.isEmpty()) {
+            throw new RuntimeException("Credentials not found. Set environment variables or provide sensitive.properties");
+        }
+
         LoginPage login = new LoginPage(getDriver());
         login.login(userName,passWord);
 

@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.nio.file.Paths;
 import java.time.Duration;
 
 public class BasePage {
@@ -85,5 +86,30 @@ public class BasePage {
         WebElement src=wait.until(ExpectedConditions.visibilityOfElementLocated(source));
         WebElement tar=wait.until(ExpectedConditions.visibilityOfElementLocated(target));
         actions.moveToElement(src).clickAndHold().pause(Duration.ofMillis(500)).moveToElement(tar).pause(Duration.ofMillis(500)).release().perform();
+    }
+
+    protected void switchToNewWindow() {
+        String parent = driver.getWindowHandle();
+        for (String handle : driver.getWindowHandles()) {
+            if (!handle.equals(parent)) {
+                driver.switchTo().window(handle);
+                break;
+            }
+        }
+    }
+    protected void clickLeftNavMenu(String menu){
+        By Menu=By.xpath("//*[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='"+menu+"']");
+        click(Menu);
+    }
+    protected void uploadFile(By locator, String filePath){
+        WebElement element=wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        element.sendKeys(filePath);
+    }
+    protected String getTestFilePath(String fileName) {
+        return Paths.get("src", "test", "resources", "testData", fileName).toAbsolutePath().toString();
+    }
+    protected boolean verifyText(String text){
+        By locator=By.xpath("//*[text()='"+text+"']");
+        return isDisplayed(locator);
     }
 }
