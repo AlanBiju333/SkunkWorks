@@ -23,11 +23,14 @@ public class PIMTest extends BaseTest {
         Assert.assertTrue(pim.isPIMPagevisible(),"PIM page loaded successfully");
     }
     @Test
-    public void verifyCreateEmployee(){
+    public void createAndVerifyEmployee(){
         validLogin();
         PIMPage pim=new PIMPage(getDriver());
         pim.clickPIM();
         pim.addNewEmployee(firstName,lastName,"profilePic.png");
         Assert.assertTrue(pim.verifyToast());
+        pim.searchEmployee(firstName);
+        Assert.assertTrue(pim.isEmployeePresent(firstName),firstName+" is present in the list");
     }
+
 }

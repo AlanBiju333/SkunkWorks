@@ -3,7 +3,10 @@ package com.skunkworks.pages;
 import com.skunkworks.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.List;
 import java.util.UUID;
 
 public class PIMPage extends BasePage {
@@ -13,6 +16,10 @@ public class PIMPage extends BasePage {
     private final By lastName=By.cssSelector("[name='lastName']");
     private final By uploadProfilePic=By.xpath("//input[@type='file']");
     private final By saveButton=By.xpath("//*[@type='submit' and text()=' Save ']");
+    private final By nameInput=By.xpath("(//input[contains(@placeholder,'Type for hints')])[1]");
+    private final By employeeListButton=By.xpath("//a[@class='oxd-topbar-body-nav-tab-item' and text()='Employee List']");
+    private final By searchButton=By.xpath("//*[@type='submit' and text()=' Search ']");
+    private final By tableRows=By.xpath("//*[@class='oxd-table-body']//child::*[@class='oxd-table-card']");
 
     public PIMPage(WebDriver driver) {
         super(driver);
@@ -32,5 +39,19 @@ public class PIMPage extends BasePage {
     }
     public boolean verifyToast(){
         return verifyText("Successfully Saved");
+    }
+    public void searchEmployee(String name){
+     click(employeeListButton);
+     clearAndEnterText(nameInput,name);
+     click(searchButton);
+    }
+    public boolean isEmployeePresent(String name){
+        List<WebElement>rows=wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(tableRows));
+       for(WebElement s:rows){
+           if(s.getText().trim().contains(name)){
+               return true;
+           }
+       }
+       return false;
     }
 }
