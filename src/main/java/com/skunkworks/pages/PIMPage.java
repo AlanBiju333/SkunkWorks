@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
-import java.util.UUID;
 
 public class PIMPage extends BasePage {
     private final By PIMHeader=By.xpath("//h6[text()='PIM']");

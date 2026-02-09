@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="SkunkWorks Automation Suite">
+
+    <listeners>
+        <listener class-name="com.skunkworks.listeners.TestListener"/>
+    </listeners>
+    <test name="Basic Tests">
+        <classes>
+            <class name="com.skunkworks.tests.LoginTest"/>
+        </classes>
+    </test>
+</suite>
