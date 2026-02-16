@@ -17,6 +17,7 @@ public class TestListener implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         ExtentTestManager.getTest().log(Status.PASS, "Test Passed");
+        ExtentTestManager.unload();
     }
     @Override
     public void onTestFailure(ITestResult result) {
@@ -29,6 +30,12 @@ public class TestListener implements ITestListener {
             ExtentTestManager.getTest().fail(t.getMessage());
         }
         ExtentTestManager.getTest().info("Exception Type: " + t.getClass().getSimpleName());
+        ExtentTestManager.unload();
+    }
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        ExtentTestManager.getTest().skip("Test Skipped");
+        ExtentTestManager.unload();
     }
     @Override
     public void onFinish(ITestContext context) {
