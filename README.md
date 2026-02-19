@@ -5,6 +5,9 @@ It supports scalable test design, parallel execution, and consistent reporting.
 
 <img width="636" height="874" alt="image" src="https://github.com/user-attachments/assets/e29274f2-6fbf-462c-a34b-4f9bb9374967" />
 <img width="479" height="715" alt="image" src="https://github.com/user-attachments/assets/6f7c538c-0190-419d-ba32-b1b47a8d1c2f" />
+-framework supports parallel execution
+<img width="1920" height="1184" alt="Screenshot (6)" src="https://github.com/user-attachments/assets/a23a4e29-406e-4a04-893d-f3da29fdcb27" />
+
 
 ## Tech Stack
 - Language: Java 17  
