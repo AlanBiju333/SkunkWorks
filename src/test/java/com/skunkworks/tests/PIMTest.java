@@ -10,10 +10,12 @@ import com.skunkworks.utils.BasicUtils;
 public class PIMTest extends BaseTest {
     String firstName;
     String lastName;
+    String empID;
     @BeforeClass
     public void generateData(){
         firstName=BasicUtils.generateRandomName("Test");
         lastName=BasicUtils.generateRandomName("Test");
+        empID=BasicUtils.getRandomNumberString(4);
     }
     @Test
     public void verifyPIMPage(){
@@ -27,7 +29,7 @@ public class PIMTest extends BaseTest {
         validLogin();
         PIMPage pim=new PIMPage(getDriver());
         pim.clickPIM();
-        pim.addNewEmployee(firstName,lastName,"profilePic.png");
+        pim.addNewEmployee(firstName,lastName,empID,"profilePic.png");
         Assert.assertTrue(pim.verifyToast());
         pim.searchEmployee(firstName);
         Assert.assertTrue(pim.isEmployeePresent(firstName),firstName+" is present in the list");

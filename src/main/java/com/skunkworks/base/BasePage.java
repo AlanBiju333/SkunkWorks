@@ -42,6 +42,7 @@ public class BasePage {
 
     protected void clearAndEnterText(By locator, String text){
         WebElement element=wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        element.click();
         element.clear();
         element.sendKeys(text);
     }
