@@ -1,11 +1,12 @@
 package com.skunkworks.api.base;
 
+import com.skunkworks.config.ConfigReader;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 
 public class BaseApi {
     protected RequestSpecification requestSpec(){
-        return new RequestSpecBuilder().setBaseUri("https://reqres.in").addHeader("x-api-key","pub_d3ee12e8c83807eed593c8486851cbf6912ff9497353584f4ea08b73efb8ac6c").
+        return new RequestSpecBuilder().setBaseUri(ConfigReader.getProperty("base.uri")).addHeader("x-api-key",ConfigReader.getProperty("x.api.key")).
                 addHeader("Content-Type","application/json").build();
     }
 }
