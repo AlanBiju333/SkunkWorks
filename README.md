@@ -1,10 +1,11 @@
 ## Project Overview and structure
-This project is an UI automation framework built using Java and Selenium WebDriver,designed for a clean automation, maintainable test design and thread-safe execution.
-The framework follows the Page Object Model (POM) pattern to ensure clear separation between test logic and page interactions. 
-It supports scalable test design, parallel execution, and consistent reporting.
+This project demonstrates a hybrid UI + API automation framework combining Java, Selenium WebDriver and RestAssured designed for a clean automation, maintainable test design and thread-safe execution.
+The framework follows the Page Object Model (POM) pattern to ensure clear separation between test logic and page interactions. It supports scalable test design, parallel execution, and consistent reporting.
 
-<img width="636" height="874" alt="image" src="https://github.com/user-attachments/assets/e29274f2-6fbf-462c-a34b-4f9bb9374967" />
-<img width="479" height="715" alt="image" src="https://github.com/user-attachments/assets/6f7c538c-0190-419d-ba32-b1b47a8d1c2f" />
+<img width="554" height="756" alt="image" src="https://github.com/user-attachments/assets/659ffe90-b23a-4c02-a7f0-f4a8c325b6e3" />
+<img width="547" height="941" alt="image" src="https://github.com/user-attachments/assets/9587bcbc-eab2-4953-8b16-a908b24f24fa" />
+
+
 
 
 -framework supports parallel execution
@@ -13,7 +14,8 @@ It supports scalable test design, parallel execution, and consistent reporting.
 
 ## Tech Stack
 - Language: Java 17  
-- UI Automation: Selenium WebDriver 4.x  
+- UI Automation: Selenium WebDriver 4.x
+- API Automation: REST Assured 5.x  
 - Test Framework: TestNG  
 - Build Tool: Maven  
 - Design Pattern: Page Object Model (POM)  
@@ -44,12 +46,18 @@ It supports scalable test design, parallel execution, and consistent reporting.
 
 - Configuration Management:  
   Environment-specific values such as browser type, URLs, and timeouts are managed
-  using a properties-based configuration approach. Also sensitive informations like credentials are managed through a separate template file and credentials can also
-  be read from environment variables.
+  using a properties-based configuration approach. Also sensitive informations like credentials are managed through a separate template file and credentials can alsobe read from environment variables.
+
+- API Automation
+  This framework includes basic API automation using RestAssured and includes,
+  *GET request validation
+  *POST request with request payload
+  *JSON response validation using JsonPath
+  *RequestSpecification for reusable API configuration
+  *POJO based request payload handling
 
 ## Reporting
-The framework uses ExtentReports to generate detailed and readable execution reports
-for each test run.
+The framework uses ExtentReports to generate detailed and readable execution reports for each test run.
 - Each test execution is logged with clear pass/fail status.
 - Failure scenarios automatically capture screenshots.
 - Screenshots are embedded directly into the HTML report using Base64 encoding, eliminating dependency on external image files.
