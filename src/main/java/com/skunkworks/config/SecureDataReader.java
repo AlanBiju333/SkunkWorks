@@ -37,4 +37,12 @@ public class SecureDataReader {
         }
     }
 
+    public static String getXapiKey() {
+        String key = System.getenv("TEST_API_KEY");
+        if (key != null && !key.isEmpty()) {
+            return key;
+        }else {
+            return loadSecureFile().getProperty("x.api.key");
+        }
+    }
 }
