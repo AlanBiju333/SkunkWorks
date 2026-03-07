@@ -38,9 +38,9 @@ public class SecureDataReader {
     }
 
     public static String getXapiKey() {
-        String password = System.getenv("TEST_API_KEY");
-        if (password != null && !password.isEmpty()) {
-            return password;
+        String key = System.getenv("TEST_API_KEY");
+        if (key != null && !key.isEmpty()) {
+            return key;
         }else {
             return loadSecureFile().getProperty("x.api.key");
         }
