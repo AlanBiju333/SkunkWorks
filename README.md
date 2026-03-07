@@ -2,7 +2,7 @@
 This project demonstrates a hybrid UI + API automation framework combining Java, Selenium WebDriver and RestAssured designed for a clean automation, maintainable test design and thread-safe execution.
 The framework follows the Page Object Model (POM) pattern to ensure clear separation between test logic and page interactions. It supports scalable test design, parallel execution, and consistent reporting.
 
-<img width="554" height="756" alt="image" src="https://github.com/user-attachments/assets/659ffe90-b23a-4c02-a7f0-f4a8c325b6e3" />
+<img width="533" height="862" alt="image" src="https://github.com/user-attachments/assets/f4900b1f-8378-49e9-90ce-5306bcdd2fa9" />
 <img width="547" height="941" alt="image" src="https://github.com/user-attachments/assets/9587bcbc-eab2-4953-8b16-a908b24f24fa" />
 
 
