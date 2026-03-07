@@ -50,11 +50,11 @@ The framework follows the Page Object Model (POM) pattern to ensure clear separa
 
 - API Automation
   This framework includes basic API automation using RestAssured and includes,
-  *GET request validation
-  *POST request with request payload
-  *JSON response validation using JsonPath
-  *RequestSpecification for reusable API configuration
-  *POJO based request payload handling
+  - GET request validation
+  - POST request with request payload
+  - JSON response validation using JsonPath
+  - RequestSpecification for reusable API configuration
+  - POJO based request payload handling
 
 ## Reporting
 The framework uses ExtentReports to generate detailed and readable execution reports for each test run.
