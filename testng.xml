@@ -10,6 +10,7 @@
             <class name="com.skunkworks.tests.LoginTest"/>
             <class name="com.skunkworks.tests.DashBoardTest"/>
             <class name="com.skunkworks.tests.PIMTest"/>
+            <class name="com.skunkworks.api.tests.NewApiTest"/>
         </classes>
     </test>
 </suite>
